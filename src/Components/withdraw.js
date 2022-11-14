@@ -1,0 +1,9 @@
+console.log("withdraw.js loaded");
+
+function Withdraw(){
+    return (
+      <h1>Withdraw</h1>
+    )
+  }
+
+  export default Withdraw;
