@@ -1,9 +1,14 @@
-console.log("balance.js loaded");
+import React from 'react';
+import {UserContext} from "./context";
 
 function Balance(){
-    return (
-      <h1>Balance</h1>
-    )
-  }
+  const ctx = React.useContext(UserContext);
+  return (
+    <>
+    <h1>Balance</h1>
+    ${JSON.stringify(ctx.users[0].balance)}<br/>
+    </>
+  );
+}
 
   export default Balance;

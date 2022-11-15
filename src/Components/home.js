@@ -1,7 +1,6 @@
 import React from "react";
 import {Card} from "./context";
 
-console.log("home.js loaded");
 
 function Home(){
     return (
@@ -10,7 +9,7 @@ function Home(){
         header="BadBank Landing Module"
         title="Welcome to the bank"
         text="You can move around using the navigation bar."
-        body={(<div> HOME PAGE </div>)}
+        body={(<img src="../bank.png" className="img-fluid" alt="bank.png"/>)}
       />    
     );  
   }

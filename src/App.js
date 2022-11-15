@@ -10,14 +10,11 @@ import Withdraw from './Components/withdraw';
 import Balance from './Components/balance';
 import AllData from './Components/alldata';
 
-console.log("App.js LOADED");
-
-
 function App() {
   return (
     <HashRouter>
       <NavBar/>
-      <UserContext.Provider value={{users:[{name:'abel',email:'abel@mit.edu',password:'secret',balance:100}]}}>
+      <UserContext.Provider value={{users:[{id: 0, name:'Mit',email:'Mitsananikone@gmail.com',password:'secret',balance:1000}]}}>
         <Link to="/"></Link>
         <div className="container" style={{padding: "20px"}}>
           <Routes>

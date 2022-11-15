@@ -1,8 +1,7 @@
 import React from "react";
 
 const UserContext = React.createContext(null);
-console.log("context.js LOADED");
-
+// const Context = React.createContext();
 
 function Card(props){
     function classes(){

@@ -1,9 +1,9 @@
 import {UserContext, Card} from "./context";
 import React from 'react';
 
-console.log("createaccount.js loaded");
 
 function CreateAccount(){
+  
     const [show, setShow]         = React.useState(true);
     const [status, setStatus]     = React.useState('');
     const [name, setName]         = React.useState('');
@@ -11,6 +11,7 @@ function CreateAccount(){
     const [password, setPassword] = React.useState('');
     const ctx = React.useContext(UserContext);  
   
+
     function validate(field, label){
         if (!field) {
           setStatus('Error: ' + label);
@@ -21,12 +22,13 @@ function CreateAccount(){
     }
   
     function handleCreate(){
-      console.log(name,email,password);
+      console.log(ctx.users);
       if (!validate(name,     'name'))     return;
       if (!validate(email,    'email'))    return;
       if (!validate(password, 'password')) return;
-      ctx.users.push({name,email,password,balance:100});
+      ctx.users.push({name,email,password,balance:0});
       setShow(false);
+      
     }    
   
     function clearForm(){
