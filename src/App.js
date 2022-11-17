@@ -9,9 +9,11 @@ import Deposit from './Components/deposit';
 import Withdraw from './Components/withdraw';
 import Balance from './Components/balance';
 import AllData from './Components/alldata';
+import Popup from 'react-popup';
 
 function App() {
   return (
+    
     <HashRouter>
       <NavBar/>
       <UserContext.Provider value={{users:[{id: 0, name:'Mit',email:'Mitsananikone@gmail.com',password:'secret',balance:1000}]}}>

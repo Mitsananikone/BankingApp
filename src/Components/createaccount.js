@@ -1,4 +1,4 @@
-import {UserContext, Card} from "./context";
+import {UserContext, UserIdContext, Card} from "./context";
 import React from 'react';
 
 
@@ -6,6 +6,7 @@ function CreateAccount(){
   
     const [show, setShow]         = React.useState(true);
     const [status, setStatus]     = React.useState('');
+    const [id, setId]             = React.useState(1);
     const [name, setName]         = React.useState('');
     const [email, setEmail]       = React.useState('');
     const [password, setPassword] = React.useState('');
@@ -13,6 +14,7 @@ function CreateAccount(){
   
 
     function validate(field, label){
+      
         if (!field) {
           setStatus('Error: ' + label);
           setTimeout(() => setStatus(''),3000);
@@ -22,11 +24,15 @@ function CreateAccount(){
     }
   
     function handleCreate(){
-      console.log(ctx.users);
+      
+      console.log("ctxId:  " + (id));
+      // if (!validate(id,       'id'))       return;
       if (!validate(name,     'name'))     return;
       if (!validate(email,    'email'))    return;
       if (!validate(password, 'password')) return;
-      ctx.users.push({name,email,password,balance:0});
+      ctx.users.push({id, name,email,password});
+      setId(ctx.users.length);
+      
       setShow(false);
       
     }    

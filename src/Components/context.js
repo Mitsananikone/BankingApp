@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState }from "react";
+import Alert from 'react-bootstrap/Alert';
 
 const UserContext = React.createContext(null);
 // const Context = React.createContext();
+
+const UserIdContext = React.createContext(0);
 
 function Card(props){
     function classes(){
@@ -23,4 +26,25 @@ function Card(props){
     );    
   }
 
-export {UserContext, Card};
+  function AlertPopup() {
+    return (
+      <>
+        {[
+          'primary',
+          'secondary',
+          'success',
+          'danger',
+          'warning',
+          'info',
+          'light',
+          'dark',
+        ].map((variant) => (
+          <Alert key={variant} variant={variant}>
+            This is a {variant} alert—check it out!
+          </Alert>
+        ))}
+      </>
+    );
+  }
+
+export {UserContext, Card, UserIdContext};
