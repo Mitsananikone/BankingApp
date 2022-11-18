@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import {UserContext, Card, AlertPopup} from "./context";
+import {UserContext, Card, UserIdContext} from "./context";
 import { render } from '@testing-library/react';
 import Popup from 'react-popup';
 import { type } from '@testing-library/user-event/dist/type';
@@ -18,9 +18,9 @@ function Login() {
       return (((ctx.name.indexOf(searchEmail))) > -1);
       });
 
-    const userLogin = JSON.stringify((index[0].id))
-    console.log("Index: " + JSON.stringify((index[0].id)));
-
+    const userLogin = JSON.stringify((index[0].id));
+    console.log("Index: " + ((userLogin)));
+    
     // const ctxEMAIL = JSON.stringify(ctx.users[userLogin]['email']);
     // console.log("UserContext EMAIL: " + ctxEMAIL);
     // console.log("UserInput email: " + email);
@@ -28,19 +28,14 @@ function Login() {
     // const ctxPW = JSON.stringify(ctx.users[userLogin]['password']);
     // console.log("UserContext PASSWORD: " + ctxPW);
     // console.log("UserInput password: " + password);
-    return userLogin;
-  
-  };
-    
-  function handleSubmit(event) {
-    
-    const userLogin = validateForm();
+
     console.log("handlesubmit index: " + JSON.stringify(userLogin))
     // console.log("results: " + JSON.stringify(results));
     // const ctxEMAIL = JSON.stringify(ctx.users[0]['email']);
     const ctxEMAIL = JSON.stringify(ctx.users[userLogin]['email']);
     const ctxPW = JSON.stringify(ctx.users[userLogin]['password']);
-    
+    alert(ctx.users[userLogin]['name'] + " is signed in");
+
     if( (('"' + password + '"') === ctxPW) && (('"' + email + '"') === ctxEMAIL)) { 
       setValidPW(true);
       console.log("VALID");
@@ -54,10 +49,17 @@ function Login() {
       console.log("INVALID")
       alert('FAIL');
       console.log("UserContext EMAIL: " + ctxEMAIL);
-      console.log("UserInput email: " + email);
+      console.log("UserInput email: " + ('"' + email + '"'))
       console.log("UserContext PASSWORD: " + ctxPW);
-      console.log("UserInput password: " + password);
+      console.log("UserInput password: " + ('"' + password + '"'));
     }
+    
+    return userLogin;
+  
+  };
+    
+  function handleSubmit(event) {
+    const index = validateForm();
     
   }
 

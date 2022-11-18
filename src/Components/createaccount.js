@@ -1,4 +1,5 @@
 import {UserContext, UserIdContext, Card} from "./context";
+import Button from 'react-bootstrap/Button';
 import React from 'react';
 
 
@@ -24,13 +25,12 @@ function CreateAccount(){
     }
   
     function handleCreate(){
-      
-      console.log("ctxId:  " + (id));
       // if (!validate(id,       'id'))       return;
+      const balance = 0;
       if (!validate(name,     'name'))     return;
       if (!validate(email,    'email'))    return;
       if (!validate(password, 'password')) return;
-      ctx.users.push({id, name,email,password});
+      ctx.users.push({id, name, email, password, balance});
       setId(ctx.users.length);
       
       setShow(false);
@@ -61,7 +61,7 @@ function CreateAccount(){
                 </>
               ):(
                 <>
-                <h5>Success</h5>
+                <h5>Success! <br/> <br/>{name} is logged in.</h5>
                 <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button>
                 </>
               )}

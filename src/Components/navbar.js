@@ -1,4 +1,6 @@
+import React from 'react';
 import {Link} from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function NavBar(){
@@ -16,18 +18,19 @@ function NavBar(){
             <li className="nav-item">
               <Link to="createaccount/" className="nav-link">Create Account</Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="login/" className="nav-link">Login</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="deposit/" className="nav-link">Deposit</Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link to="withdraw/" className="nav-link">Withdraw</Link>
             </li>
             <li className="nav-item">
-              <Link to="balance/" className="nav-link">Balance</Link>
+              <Link to="deposit/" className="nav-link">Deposit</Link>
             </li>
+         
+            {/* <li className="nav-item">
+              <Link to="balance/" className="nav-link">Balance</Link>
+            </li> */}
             <li className="nav-item">
               <Link to="alldata/" className="nav-link">AllData</Link>
             </li>          

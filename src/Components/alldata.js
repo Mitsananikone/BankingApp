@@ -7,7 +7,9 @@ function AllData(){
     return (
       <>
       <h5>All Data in Store</h5>
-      {JSON.stringify(ctx.users)}<br /><br />
+        <div>
+        {JSON.stringify(ctx.users)}
+        </div>
       </>
     );
   }
