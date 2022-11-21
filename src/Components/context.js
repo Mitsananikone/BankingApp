@@ -1,11 +1,12 @@
 import React, { useState }from "react";
 import Button from 'react-bootstrap/Button';
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-import Table from "react-bootstrap-table-next";
+// import Table from "react-bootstrap-table-next";
 
-const UserContext = React.createContext(null
-  // {users:[{id: 0, name:'Mit',email:'Mitsananikone@gmail.com',password:'secret',balance:1000}]}
+
+console.log("useContext loaded")
+const UserContext = React.createContext(
+     {users:[{id: 0, name:'Mit',email:'Mitsananikone@gmail.com',password:'secret',balance:1000}]}
 );
 // const Context = React.createContext();
 
@@ -76,4 +77,4 @@ function Card(props){
 
 
 
-export {UserContext, Card, UserChart, ATM};
+export {UserContext, Card, ATM, Table};

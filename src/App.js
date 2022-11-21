@@ -10,12 +10,17 @@ import Withdraw from './Components/withdraw';
 import Balance from './Components/balance';
 import AllData from './Components/alldata';
 
+
 function App() {
+  const ctx = React.useContext(UserContext);  
+  const currentUser = ctx.users.length-1;
+  console.log("CTX_APP.js: " + JSON.stringify(ctx.users[currentUser].id))
+
   return (
     
     <HashRouter>
       <NavBar/>
-      <UserContext.Provider value={{users:[{id: 0, name:'Mit',email:'Mitsananikone@gmail.com',password:'secret', balance: 0}]}}>
+      <UserContext.Provider value={{users:[{id: 0, name:'Mit',email:'Mitsananikone@gmail.com',password:'secret', balance: 2000}]}}>
         <Link to="/"></Link>
         <div className="container" style={{padding: "20px"}}>
           <Routes>

@@ -1,37 +1,44 @@
-import {UserContext, UserIdContext, Card} from "./context";
+import {UserContext, Card} from "./context";
 import Button from 'react-bootstrap/Button';
 import React from 'react';
 
 
 function CreateAccount(){
   
+    const ctx = React.useContext(UserContext); 
+    const currentUser = ctx.users.length;
+ 
+
     const [show, setShow]         = React.useState(true);
     const [status, setStatus]     = React.useState('');
-    const [id, setId]             = React.useState(1);
+    const [id, setId]             = React.useState(currentUser);
     const [name, setName]         = React.useState('');
     const [email, setEmail]       = React.useState('');
     const [password, setPassword] = React.useState('');
-    const ctx = React.useContext(UserContext);  
+
+     
   
 
     function validate(field, label){
-      
         if (!field) {
           setStatus('Error: ' + label);
           setTimeout(() => setStatus(''),3000);
           return false;
         }
+
+        setId(id+1);
         return true;
     }
   
     function handleCreate(){
       // if (!validate(id,       'id'))       return;
-      const balance = 0;
+      console.log("ID:   " + id)
+
+      const balance = 1000;
       if (!validate(name,     'name'))     return;
       if (!validate(email,    'email'))    return;
       if (!validate(password, 'password')) return;
       ctx.users.push({id, name, email, password, balance});
-      setId(ctx.users.length);
       
       setShow(false);
       

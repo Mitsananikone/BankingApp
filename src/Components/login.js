@@ -3,7 +3,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import {UserContext, Card, UserIdContext} from "./context";
 import { render } from '@testing-library/react';
-import Popup from 'react-popup';
 import { type } from '@testing-library/user-event/dist/type';
 
 function Login() {

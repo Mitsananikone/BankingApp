@@ -1,9 +1,7 @@
 import React from 'react';
-import {UserContext, UserChart} from "./context";
-import {Table} from 'react-bootstrap/Table';
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import {UserContext, Table} from "./context";
 import '../App.css';
-import Table from "react-bootstrap-table-next";
+// import Table from "react-bootstrap-table-next";
 
 
 function AllData(){
@@ -13,10 +11,11 @@ function AllData(){
     const addTableRow = (result) => {
       return (
         <tr key={result}>
+          <td>{result.id}</td>
           <td>{result.name}</td>
           <td>{result.email}</td>
           <td>{result.password}</td>
-       
+          <td>{result.balance}</td>
         
         </tr>)
     }
@@ -28,11 +27,11 @@ function AllData(){
         <table className="striped highlight ">
           <thead>
             <tr>
-            
+              <th>ID</th>
               <th>Name</th>
               <th>Email</th>
               <th>Password</th>
-    
+              <th>Balance</th>
             </tr>
           </thead>
           <tbody>
@@ -43,7 +42,7 @@ function AllData(){
         </table>
       )
     }
-
+    console.log("ALL:  " + JSON.stringify(ctx.users))
       return (
       <Table
       txtcolor="black"
