@@ -35,8 +35,8 @@ function AllData(){
             </tr>
           </thead>
           <tbody>
-            {results.map((result, index) => {
-              return addTableRow(result, index)
+            {results.map((result) => {
+              return addTableRow(result)
             })}
           </tbody>
         </table>

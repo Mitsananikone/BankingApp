@@ -41,7 +41,7 @@ function Card(props){
        <div className={classes()} style={{maxWidth: "18rem"}}>
         <div className="card-header">{props.header}</div>
         <div className="card-body">
-          {props.title && (<h5 className="card-title">{props.title}</h5>)}
+          {props.title && (<h3 className="card-title">{props.title}<span className="card-balance">&emsp;{props.balance}</span></h3> )  }
           {/* {props.input && (<input type="input" className="form-control" id="submit">{props.input}</input>)} */}
           {props.body}
           {props.status && (<div id='createStatus'>{props.status}</div>)}

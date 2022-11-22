@@ -7,7 +7,7 @@ import { json } from 'react-router';
 
 function Deposit(){
   
-  const [deposit, setDeposit]         = React.useState(null);
+  const [deposit, setDeposit]         = React.useState(null || '');
   const [show, setShow]               = React.useState(true);  // setshow = false brings 2nd card
   const [status, setStatus]           = React.useState('');
   const [secondCardButton, setSecondCardButton]      = React.useState(true);  // true = invis
@@ -20,7 +20,7 @@ function Deposit(){
     function clearForm(){
        setShow(true);
        setSecondCardButton(true);
-       setDeposit(null);
+       setDeposit(null || '');
     }
 
     useEffect(() => {
@@ -67,7 +67,7 @@ function Deposit(){
         setShow(false)
         const newBalance = Number(ctx.users[currentUser].balance + Number(deposit));
         ctx.users[currentUser].balance = newBalance;
-        alert({status}); 
+        alert("Successfull Deposit"); 
         // clearForm();
         return;
       }
@@ -87,25 +87,27 @@ function Deposit(){
               txtcolor="black"
               header="DEPOSIT"
               title="BALANCE"
+              balance={"$" + JSON.stringify(ctx.users[currentUser].balance)}
               status={status}
               disabled = "true"
               body={show ? (
                 <>
-
-                  ${JSON.stringify(ctx.users[currentUser].balance)}
-
+                  {/* <div id="balance">
+                    ${JSON.stringify(ctx.users[currentUser].balance)}
+                  </div> */}
+                  <label><br/>Deposit Amount</label>
                   <input type="input" className="form-control" id="deposit" placeholder="Amount to Deposit" value={deposit} onChange={e => setDeposit(e.currentTarget.value)} />
 
-                    <Button id="ATMsubmit" type="submit" className="btn btn-light" disabled={secondCardButton} onClick ={ submitDeposit} > Submit </Button>
-                  
+                  <Button id="ATMsubmit" type="submit" className="btn btn-light" disabled={secondCardButton} onClick ={ submitDeposit} > Deposit </Button>
+                
                 </>
               ):(
                 // SUCCESS 
                  <>  
 
-                  ${JSON.stringify(ctx.users[currentUser].balance)}
-                  <h5>SUCCESS <br/> <br/> ${deposit} deposited</h5>
-                  <button type="submit" className="btn btn-light" onClick={clearForm}>Continue Button</button>
+                
+                  <h5> <br/> <br/> ${deposit} deposited</h5>
+                  <Button id="ATMsubmit" type="submit" className="btn btn-light" onClick={clearForm}>Continue Button</Button>
                 </>
 
                   )}
