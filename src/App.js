@@ -9,15 +9,17 @@ import Deposit from './Components/deposit';
 import Withdraw from './Components/withdraw';
 import Balance from './Components/balance';
 import AllData from './Components/alldata';
+import { Nav } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 
 function App() {
-  const ctx = React.useContext(UserContext);  
-  const currentUser = ctx.users.length-1;
   return (
     
     <HashRouter>
       <NavBar/>
+      
       <UserContext.Provider value={{users:[{id: 0, name:'Mit',email:'Mitsananikone@gmail.com',password:'secret', balance: 1000}]}}>
         <Link to="/"></Link>
         <div className="container" style={{padding: "20px"}}>
@@ -31,7 +33,8 @@ function App() {
             <Route path="/alldata/" element={<AllData/>} />
           </Routes>
         </div>
-      </UserContext.Provider>      
+      </UserContext.Provider>    
+
     </HashRouter>
   );
 }

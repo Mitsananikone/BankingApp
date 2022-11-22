@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import {UserContext, ATM, Card} from "./context";
 import Button from 'react-bootstrap/Button';
-import { json } from 'react-router';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function Deposit(){
@@ -78,8 +77,7 @@ function Deposit(){
         console.log("CURRENT USER balance: " + (ctx.users[currentUser].balance));
         }
       }
-
-    
+   
       return ( 
       
             <ATM

@@ -32,24 +32,31 @@ function Deposit(){
 
 
     function validate(field) {
-        if(!isNaN(field) === true && field >= 1) {    // if  a number, return true
+        if(!isNaN(field) === true && field >= 1) { 
+          if((field != null) && (field > Number(ctx.users[currentUser].balance)))  {
+            setStatus("Insufficient Funds");
+          setTimeout(() => setStatus(''),3000)
+            return false// if  a number, return true
+          }
           setStatus("");
           setTimeout(() => setStatus(''),3000)
           // clearForm();
           return true;
         }
+
         else if(Number(field) < 0) {
-          console.log("field :" + field)
           setStatus("Please do not Enter Negative Numbers");
           setTimeout(() => setStatus(''),3000)
           // clearForm();
           return false;
         }
         else if(Number(field)===0) {
+          
           setTimeout(() => setStatus(''),3000)
           // clearForm();
           return false;
         }
+      
         else{
           setStatus("Please Enter a Numerical Value");
           setTimeout(() => setStatus(''),3000)
@@ -96,7 +103,7 @@ function Deposit(){
                     ${JSON.stringify(ctx.users[currentUser].balance)}
                   </div> */}
                   <label><br/>Withdraw Amount</label>
-                  <input type="input" className="form-control" id="withdraw" placeholder="Amount to Deposit" value={withdraw} onChange={e => setWithdraw(e.currentTarget.value)} />
+                  <input type="input" className="form-control" id="withdraw" placeholder="Amount to Withdraw" value={withdraw} onChange={e => setWithdraw(e.currentTarget.value)} />
 
                   <Button id="ATMsubmit" type="submit" className="btn btn-light" disabled={secondCardButton} onClick ={ submitWithdraw} > Withdraw </Button>
                 

@@ -1,7 +1,8 @@
 import {UserContext, Card} from "./context";
 import Button from 'react-bootstrap/Button';
 import React from 'react';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
 
 function CreateAccount(){
   

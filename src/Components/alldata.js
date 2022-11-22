@@ -1,6 +1,7 @@
 import React from 'react';
 import {UserContext, Table} from "./context";
 import '../App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import Table from "react-bootstrap-table-next";
 
 

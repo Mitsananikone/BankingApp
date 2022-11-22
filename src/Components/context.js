@@ -1,6 +1,6 @@
 import React, { useState }from "react";
 import Button from 'react-bootstrap/Button';
-import '../App.css';
+// import '../App.css';
 // import Table from "react-bootstrap-table-next";
 
 

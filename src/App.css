@@ -13,20 +13,24 @@ code {
 }
 
 
-td {
-  width: 500px;
-  background-color: rgb(187, 243, 247);
+tr > td {
+  width: 400px;
+  background-color: rgba(13,110,253, 0.3);
   border: 1px solid black
 }
+
+/* tr {
+  background-color: rgba(13,110,253, 1);
+  border: 1px solid black;
+} */
+
+
 
 tr:hover {
   opacity: 50%;
 }
 
-tr {
-  background-color: lightblue;
-  border: 1px solid black;
-}
+
 
 #balance {
   justify-content: right;
@@ -46,9 +50,40 @@ tr {
   float: right;
 }
 
+.container {
+  margin-left:50px ;
+}
+
+
+/* li > a.active, a:hover {
+  background-color: green;
+  color: white;
+  border-radius: 5%;
+} */
+
+.nav-link.active {
+  background-color: rgba(13,110,253, 0.9);
+  border-radius: 5%;
+  border: 1px solid rgba(13,110,253, 0.75);
+}
+
+.nav-link:hover {
+  background-color: rgba(13,110,253, 0.6);
+  border: 1px solid rgba(13,110,253, 0.45);
+  border-radius: 5%;
+}
+
 #ATMsubmit {
   display: flex;
   align-content: center;
   justify-content: center;
   margin: 50px 0px 20px 0px;
+}
+
+#bankPic {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 180px;
+  width: 250px;
 }

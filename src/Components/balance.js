@@ -1,6 +1,7 @@
 import React from 'react';
 import {UserContext, Card} from "./context";
 
+
 function Balance(){
   const ctx = React.useContext(UserContext);  
   console.log(JSON.stringify(ctx.users.name))
