@@ -44,6 +44,7 @@ function Card(props){
           {props.title && (<h5 className="card-title">{props.title}</h5>)}
           {/* {props.input && (<input type="input" className="form-control" id="submit">{props.input}</input>)} */}
           {props.body}
+          {props.status && (<div id='createStatus'>{props.status}</div>)}
           {props.submit && (<Button id='Submit'>{props.status}</Button>)}
         </div>
       </div>      

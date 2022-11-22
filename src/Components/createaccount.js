@@ -32,7 +32,7 @@ function CreateAccount(){
   
     function handleCreate(){
       // if (!validate(id,       'id'))       return;
-      console.log("ID:   " + id)
+      // console.log("ID:   " + id)
 
       const balance = 1000;
       if (!validate(name,     'name'))     return;
@@ -54,6 +54,7 @@ function CreateAccount(){
     return (
       <Card
         bgcolor="primary"
+        txtcolor="black"
         header="Create Account"
         status={status}
         body={show ? (  
@@ -64,12 +65,12 @@ function CreateAccount(){
                 <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)}/><br/>
                 Password<br/>
                 <input type="password" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
-                <button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</button>
+                <Button type="submit" className="btn btn-light" onClick={handleCreate}>Create Account</Button>
                 </>
               ):(
                 <>
                 <h5>Success! <br/> <br/>{name} is logged in.</h5>
-                <button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</button>
+                <Button type="submit" className="btn btn-light" onClick={clearForm}>Add another account</Button>
                 </>
               )}
       />
