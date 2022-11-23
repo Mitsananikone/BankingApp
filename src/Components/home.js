@@ -7,11 +7,11 @@ function Home(){
       <Card
       bgcolor="primary"
         txtcolor="black"
-        header="BadBank Landing Module"
+        header="BadBank Home"
         title="Welcome to the Bad Bank"
-        text="You can move around using the navigation bar."
+        text="This is the Homepage"
         body={
-          <img id="bankPic" src="http://images.smartcapitalmind.com/modern-bank-building.jpg" alt='bankPic'/>
+          <img id="bankPic" src="https://media.istockphoto.com/id/654378978/photo/online-banking-on-smartphone-with-businessman-showing-screen.jpg?s=1024x1024&w=is&k=20&c=mS9A4biZzYxAc0w3i4WYdpZSv5gz2qy0R6AyZ0FKpGA=" alt='bankPic'/>
 
         }
       />    

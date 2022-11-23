@@ -4,16 +4,16 @@ import {NavLink} from "react-router-dom";
 function NavBar(){
     return(
       <>
-      <nav className="navbar navbar-expand-lg ">
+      <nav className="navbar navbar-expand-sm navbar-light bg-light">
       <NavLink to="/" className="navbar-brand"> BadBank</NavLink> 
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
+          {/* <span className="navbar-toggler-icon"></span> */}
         </button>
 
         <div className="collapse navbar-collapse text-primary" id="navbar-nav">
           <ul className="nav navbar-nav navbar-right">
 
-            <li className="nav-item">
+            <li className="nav-item innerGlow">
               <NavLink to="createaccount/" className="nav-link" >Create Account</NavLink>
             </li>
             {/* <li className="nav-item">

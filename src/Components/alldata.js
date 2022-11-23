@@ -12,11 +12,11 @@ function AllData(){
     const addTableRow = (result) => {
       return (
         <tr key={result}>
-          <td>{result.id}</td>
+          {/* <td>{result.id}</td> */}
           <td>{result.name}</td>
           <td>{result.email}</td>
           <td>{result.password}</td>
-          <td>{result.balance}</td>
+          {/* <td>{result.balance}</td> */}
         
         </tr>)
     }
@@ -28,11 +28,11 @@ function AllData(){
         <table className="striped highlight ">
           <thead>
             <tr>
-              <th>ID</th>
+              {/* <th>ID</th> */}
               <th>Name</th>
               <th>Email</th>
               <th>Password</th>
-              <th>Balance</th>
+              {/* <th>Balance</th> */}
             </tr>
           </thead>
           <tbody>

@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import {UserContext, ATM, Card} from "./context";
+import { ToastContainer, toast } from 'react-toastify';
 import Button from 'react-bootstrap/Button';
-import { json } from 'react-router';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 
-
-
-function Deposit(){
+function Withdraw(){
   
   const [withdraw, setWithdraw]         = React.useState(null || '');
   const [show, setShow]               = React.useState(true);  // setshow = false brings 2nd card
@@ -13,9 +13,7 @@ function Deposit(){
   const [secondCardButton, setSecondCardButton]      = React.useState(true);  // true = invis
 
   const ctx = React.useContext(UserContext);  
-
   const currentUser = ctx.users.length-1;
-
 
     function clearForm(){
        setShow(true);
@@ -74,7 +72,8 @@ function Deposit(){
         setShow(false)
         const newBalance = Number(ctx.users[currentUser].balance - Number(withdraw));
         ctx.users[currentUser].balance = newBalance;
-        alert("Successfull Withdraw"); 
+        let title = "Successful Withdraw";
+        alert(title); 
         // clearForm();
         return;
       }
@@ -103,7 +102,7 @@ function Deposit(){
                     ${JSON.stringify(ctx.users[currentUser].balance)}
                   </div> */}
                   <label><br/>Withdraw Amount</label>
-                  <input type="input" className="form-control" id="withdraw" placeholder="Amount to Withdraw" value={withdraw} onChange={e => setWithdraw(e.currentTarget.value)} />
+                  <input type="input" className="form-control glowing-border" id="withdraw" placeholder="Amount to Withdraw" value={withdraw} onChange={e => setWithdraw(e.currentTarget.value)} />
 
                   <Button id="ATMsubmit" type="submit" className="btn btn-light" disabled={secondCardButton} onClick ={ submitWithdraw} > Withdraw </Button>
                 
@@ -111,7 +110,7 @@ function Deposit(){
               ):(
                 // SUCCESS 
                  <>  
-                  <h5> <br/> <br/> ${withdraw} withdrawn</h5>
+                  <label> <br/> <br/> ${withdraw} withdrawn</label>
                   <Button id="ATMsubmit" type="submit" className="btn btn-light" onClick={clearForm}>Continue Button</Button>
                 </>
 
@@ -125,4 +124,4 @@ function Deposit(){
 
 
 
-  export default Deposit;
+  export default Withdraw;

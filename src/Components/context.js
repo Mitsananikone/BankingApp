@@ -18,15 +18,17 @@ function Card(props){
     }
   
     return (
+    
       <div className={classes()} style={{maxWidth: "18rem"}}>
-        <div className="card-header">{props.header}</div>
-        <div className="card-body">
-          {props.title && (<h5 className="card-title">{props.title}</h5>)}
+        <div className="card-header shadow" style={{color: "white"}}>{props.header}</div>
+        <div className="card-body shadow glowing-border">
+          {props.title && (<h5 className="card-title">{props.title}<br /></h5>) }
           {props.text && (<p className="card-text">{props.text}</p>)}
           {props.body}
           {props.status && (<div id='createStatus'>{props.status}</div>)}
         </div>
       </div>      
+   
     );    
   }
 
@@ -39,8 +41,8 @@ function Card(props){
 
     return (
        <div className={classes()} style={{maxWidth: "18rem"}}>
-        <div className="card-header">{props.header}</div>
-        <div className="card-body">
+        <div className="card-header shadow" style={{color: "white"}}>{props.header}</div>
+        <div className="card-body shadow glowing-border">
           {props.title && (<h3 className="card-title">{props.title}<span className="card-balance">&emsp;{props.balance}</span></h3> )  }
           {/* {props.input && (<input type="input" className="form-control" id="submit">{props.input}</input>)} */}
           {props.body}
@@ -60,8 +62,8 @@ function Card(props){
 
     return (
       <div className={classes()} style={{maxWidth: "50VW"}}>
-       <div className="card-header">{props.header}</div>
-       <div className="card-body" >
+       <div className="card-header shadow ">{props.header}</div>
+       <div className="card-body shadow glowing-border" >
          {/* {props.title && (<h5 className="card-title">{props.title}</h5>)} */}
          {/* {props.input && (<input type="input" className="form-control" id="submit">{props.input}</input>)} */}
          {props.body}

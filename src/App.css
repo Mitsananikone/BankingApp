@@ -1,10 +1,25 @@
 body {
+  min-height: 80vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("http://images.smartcapitalmind.com/modern-bank-building.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height:100%;
+}
+
+html {
+  margin: 2em;
+  padding: 0;
+  border: 0.01em solid rgb(204, 190, 190);
+  background-color:  rgba(13,110,253, 0.7);
+  outline: none;
+  box-shadow:  0 0 20px 1px rgba(255, 255, 255, 0.4);
 }
 
 code {
@@ -18,13 +33,6 @@ tr > td {
   background-color: rgba(13,110,253, 0.3);
   border: 1px solid black
 }
-
-/* tr {
-  background-color: rgba(13,110,253, 1);
-  border: 1px solid black;
-} */
-
-
 
 tr:hover {
   opacity: 50%;
@@ -45,6 +53,26 @@ tr:hover {
   float: left;
 }
 
+.card-header {
+  color: white;
+  box-shadow: 0px 0px 2px white;
+  border: 3px solid rgba(13,110,253, 0.9);
+  background-color: rgba(13,110,253, 0.9);
+  display: inline;
+  text-align: center;
+  justify-content: center;
+  float: left;
+}
+
+.card-body {
+  border: 2px solid rgba(13,110,253, 0.0.4);
+  background-color: rgba(13,110,253, 0.1);
+  display: inline;
+  text-align: left;
+  justify-content: center;
+  float: left;
+}
+
 .card-balance {
   display: flex;
   float: right;
@@ -52,33 +80,52 @@ tr:hover {
 
 .container {
   margin-left:50px ;
+  
 }
 
-
-/* li > a.active, a:hover {
-  background-color: green;
-  color: white;
-  border-radius: 5%;
-} */
-
-.nav-link.active {
-  background-color: rgba(13,110,253, 0.9);
-  border-radius: 5%;
-  border: 1px solid rgba(13,110,253, 0.75);
-}
-
-.nav-link:hover {
-  background-color: rgba(13,110,253, 0.6);
-  border: 1px solid rgba(13,110,253, 0.45);
-  border-radius: 5%;
-}
-
-#ATMsubmit {
+.nav-link, .navbar-brand {
+  outline: none;
+  inset: 0px 0px 20px 10px rgba(0,0,0,1);
+  padding: 15px;
+  width: 200px;
+  height: 40px;
+  margin: 15px auto;
+  transition: transform .2s; /* Animation */
+  /* border: 1px solid  rgba(13,110,253, 0.3);; */
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
-  margin: 50px 0px 20px 0px;
 }
+
+.top50px {
+  margin-top: 50px;
+}
+.navbar-brand {
+  margin: 0 32px;
+} 
+
+
+.nav-link.active, .navbar-brand.active {
+  outline: none;
+  box-shadow: 0 0 25px rgb(195, 213, 247);
+  /* border-width: 0.01em; */
+  background-color: rgba(13,110,253, 0.2);
+  border-radius: 5%;
+  border: 0.01em solid rgba(13,110,253, 0.01);
+  inset: 0px 0px 20px 10px rgba(0,0,0,1);
+}
+
+.nav-link:hover{
+  border: 1px solid rgba(13,110,253, 0.45);
+  border-radius: 7px;
+  z-index: 1;
+  background-color: rgba(13,110,253, 0.7);
+  /* border-radius: 3%; */
+  inset: 0px 0px 20px 40px rgba(0,0,0,0.9);
+  transform: scale(1.4);
+}
+
+
 
 #bankPic {
   display: flex;
@@ -86,4 +133,54 @@ tr:hover {
   justify-content: center;
   height: 180px;
   width: 250px;
+}
+
+#ATMsubmit {
+  color: black;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 50px 0px 20px 0px;
+}
+
+#ATMsubmit:disabled {
+  color:white;
+  background-color: rgba(255,255,255, 0.4);
+  border: 1px solid rgba(13,110,253, 0.45);
+}
+
+.shadow {
+  text-shadow: 1px 1px 1px grey;;
+  box-shadow: 2px 2px 30px  black;
+}
+
+.glowing-border {
+  border: 1px solid rgba(13,110,253, 0.45);
+  border-radius: 7px;
+}
+
+.glowing-border:focus { 
+  outline: none;
+  box-shadow: 0 0 25px rgb(195, 213, 247);
+}
+
+#createStatus {
+  color: red;
+}
+
+.innerGlow {
+  outline: none;
+  inset: 0px 0px 20px 10px rgba(0,0,0,0.6);
+}
+
+.footer {
+
+  background-color: rgba(13,110,253, 1);
+  font-size: xx-small;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
 }

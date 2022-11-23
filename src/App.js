@@ -34,9 +34,11 @@ function App() {
           </Routes>
         </div>
       </UserContext.Provider>    
-
+      <div className="footer"> Banking Application by Mit Sananikone <br/>Mitsananikone@gmail.com - (832) 620-3026 </div>
     </HashRouter>
+    
   );
+  
 }
 
 export default App;

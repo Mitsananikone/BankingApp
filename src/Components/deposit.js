@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import {UserContext, ATM, Card} from "./context";
+import { ToastContainer, toast } from 'react-toastify';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import 'react-toastify/dist/ReactToastify.css';
+import '../App.css';
 
 function Deposit(){
   
@@ -12,10 +14,8 @@ function Deposit(){
   const [secondCardButton, setSecondCardButton]      = React.useState(true);  // true = invis
 
   const ctx = React.useContext(UserContext);  
-
   const currentUser = ctx.users.length-1;
-
-
+ 
     function clearForm(){
        setShow(true);
        setSecondCardButton(true);
@@ -32,21 +32,21 @@ function Deposit(){
 
     function validate(field) {
         if(!isNaN(field) === true && field >= 1) {    // if  a number, return true
-          setStatus("");
+          setStatus(null || '');
           setTimeout(() => setStatus(''),3000)
           // clearForm();
-          return true;
+          return true
         }
         else if(Number(field) < 0) {
-          console.log("field :" + field)
           setStatus("Please do not Enter Negative Numbers");
           setTimeout(() => setStatus(''),3000)
           // clearForm();
           return false;
         }
         else if(Number(field)===0) {
-          setTimeout(() => setStatus(''),3000)
+          setTimeout(() => setStatus("Please Enter a Numerical Value"),3000)
           // clearForm();
+          setTimeout(() => setStatus(''),3000)
           return false;
         }
         else{
@@ -58,26 +58,24 @@ function Deposit(){
 
         
     }
-
     
     // const fullBalance = ctx.users[currentUser].balance;
     function submitDeposit() {
       if(validate(deposit)) {
+
         setShow(false)
         const newBalance = Number(ctx.users[currentUser].balance + Number(deposit));
         ctx.users[currentUser].balance = newBalance;
-        alert("Successfull Deposit"); 
+        let title = "Successful Deposit";
+        alert("Successful Deposit");
         // clearForm();
         return;
       }
-      if(!validate(deposit)) {
-        alert({status});
-        // clearForm();
-        // const name = ctx.users[currentUser].name;
-        console.log("CURRENT USER balance: " + (ctx.users[currentUser].balance));
+      else {
+         alert({status});
         }
       }
-   
+  
       return ( 
       
             <ATM
@@ -94,18 +92,16 @@ function Deposit(){
                     ${JSON.stringify(ctx.users[currentUser].balance)}
                   </div> */}
                   <label><br/>Deposit Amount</label>
-                  <input type="input" className="form-control" id="deposit" placeholder="Amount to Deposit" value={deposit} onChange={e => setDeposit(e.currentTarget.value)} />
+                  <input type="input" className="form-control glowing-border" id="deposit" placeholder="Amount to Deposit" value={deposit} onChange={e => setDeposit(e.currentTarget.value)} />
 
-                  <Button id="ATMsubmit" type="submit" className="btn btn-light" disabled={secondCardButton} onClick ={ submitDeposit} > Deposit </Button>
-                
+                  <Button id="ATMsubmit" type="submit" className="btn btn-light" disabled={secondCardButton} onClick ={submitDeposit} > Deposit </Button>
+    
                 </>
               ):(
                 // SUCCESS 
                  <>  
-
-                
-                  <h5> <br/> <br/> ${deposit} deposited</h5>
-                  <Button id="ATMsubmit" type="submit" className="btn btn-light" onClick={clearForm}>Continue Button</Button>
+                  <label> <br/> <br/> ${deposit} deposited</label>
+                  <Button id="ATMsubmit" type="submit" className="btn btn-light" onClick={clearForm}>Continue</Button>
                 </>
 
                   )}
