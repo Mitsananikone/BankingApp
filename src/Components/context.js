@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 // import Table from "react-bootstrap-table-next";
 
 
-console.log("useContext loaded")
+
 const UserContext = React.createContext(
      {users:[{id: 0, name:'Mit',email:'Mitsananikone@gmail.com',password:'secret',balance:1000}]}
 );
@@ -42,7 +42,7 @@ function Card(props){
     return (
        <div className={classes()} style={{maxWidth: "18rem"}}>
         <div className="card-header shadow" style={{color: "white"}}>{props.header}</div>
-        <div className="card-body shadow glowing-border">
+        <div className="card-body shadow glowing-border" >
           {props.title && (<h3 className="card-title">{props.title}<span className="card-balance">&emsp;{props.balance}</span></h3> )  }
           {/* {props.input && (<input type="input" className="form-control" id="submit">{props.input}</input>)} */}
           {props.body}

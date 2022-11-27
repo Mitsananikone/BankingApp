@@ -8,12 +8,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function NavBar(){
     return(
       <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light py-0">
+      <nav className="navbar navbar-expand navbar-light bg-light py-0">
       <NavLink to="/" className="navbar-brand"> BadBank</NavLink> 
-        <Button color="default" className="navbar-toggler " type="button" data-toggle="collapse" data-target="navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-          {/* <span className="navbar-toggler-icon"></span> */}
-        </Button>
-
+        {/* <Button color="default" className="navbar-toggler " type="button" data-toggle="collapse" data-target="navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation"> */}
+          {/* <span className="navbar-toggler-icon"></span>
+        </Button>  */}
         <div className="collapse navbar-collapse text-primary" id="navbar-nav">
           <ul className="nav navbar-nav navbar-right ">
 

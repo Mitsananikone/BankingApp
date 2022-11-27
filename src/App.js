@@ -22,7 +22,7 @@ function App() {
       
       <UserContext.Provider value={{users:[{id: 0, name:'Mit',email:'Mitsananikone@gmail.com',password:'secret', balance: 1000}]}}>
         <Link to="/"></Link>
-        <div className="container" style={{padding: "20px"}}>
+        <div className="Container fluid" style={{padding: "20px"}}>
           <Routes>
             <Route path="/" exact element={<Home/>} />
             <Route path="/createaccount/" element={<CreateAccount/>} />
