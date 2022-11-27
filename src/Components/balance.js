@@ -1,6 +1,6 @@
 import React from 'react';
 import {UserContext, Card} from "./context";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Balance(){
   const ctx = React.useContext(UserContext);  

@@ -61,9 +61,9 @@ function Card(props){
     }
 
     return (
-      <div className={classes()} style={{maxWidth: "50VW"}}>
-       <div className="card-header shadow ">{props.header}</div>
-       <div className="card-body shadow glowing-border" >
+      <div className={classes()}>
+       <div className="card-header shadow primary-color ">{props.header}</div>
+       <div className="card-body " >
          {/* {props.title && (<h5 className="card-title">{props.title}</h5>)} */}
          {/* {props.input && (<input type="input" className="form-control" id="submit">{props.input}</input>)} */}
          {props.body}

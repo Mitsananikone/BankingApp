@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import {UserContext, ATM, Card} from "./context";
-import { ToastContainer, toast } from 'react-toastify';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';

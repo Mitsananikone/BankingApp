@@ -1,5 +1,6 @@
 import React from "react";
 import {Card} from "./context";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Home(){
 

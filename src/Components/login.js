@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import {UserContext, Card, UserIdContext} from "./context";
 import { render } from '@testing-library/react';
 import { type } from '@testing-library/user-event/dist/type';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Login() {
   const [email, setEmail] = useState("");

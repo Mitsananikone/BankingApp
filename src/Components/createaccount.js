@@ -98,6 +98,7 @@ function CreateAccount(){
     }
   
     return (
+      
       <Card
         bgcolor="primary"
         txtcolor="black"
@@ -105,16 +106,16 @@ function CreateAccount(){
         status={status}
         body={show ? (  
                 <>                
-                <div className="shadow"></div>
+               
                 Name<br/>
-                <input type="input" className="form-control glowing-border" id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br/>
+                <input type="input" className="form-control"  id="name" placeholder="Enter name" value={name} onChange={e => setName(e.currentTarget.value)} /><br/>
                 Email address<br/>
-                <input type="input" className="form-control glowing-border" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)}/><br/>
+                <input type="input" className="form-control " id="email" autoFocus placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)}/><br/>
                 Password<br/>
-                <input type="password" className="form-control glowing-border" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
+                <input type="password" className="form-control " id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)}/><br/>
                 
                 <Button type="submit" id="ATMsubmit" className="btn btn-light" disabled={secondCardButton} onClick={handleCreate}>Create Account</Button>
-                
+           
                 
                 </>
               ):(
@@ -125,7 +126,8 @@ function CreateAccount(){
 
               )}
       />
-    )
+ 
+    ) 
   }
 
   export default CreateAccount;
